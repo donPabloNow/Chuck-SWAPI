@@ -1,0 +1,134 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "SWAPI API for the Chuck SWAPI API Project",
+    "version" : "1.0.0",
+    "title" : "SWAPI API",
+    "termsOfService" : "https://github.com/donPabloNow/Chuck-SWAPI",
+    "contact" : {
+      "email" : "don@obeyi.com"
+    },
+    "license" : {
+      "name" : "MIT",
+      "url" : "https://choosealicense.com/licenses/mit/"
+    }
+  },
+  "tags" : [ {
+    "name" : "swapis",
+    "description" : "Now with The Force Awakens data!",
+    "externalDocs" : {
+      "description" : "Find out more about SWAPI",
+      "url" : "https://swapi.dev/"
+    }
+  } ],
+  "paths" : {
+    "/people" : {
+      "post" : {
+        "tags" : [ "swapi" ],
+        "summary" : "Returns a list os Star Wars People",
+        "description" : "-[name:Luke Skywalker,...]-",
+        "operationId" : "swapiPeople",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "People" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Boba Fett"
+        },
+        "height" : {
+          "type" : "number",
+          "description" : "183 (number)"
+        },
+        "mass" : {
+          "type" : "number",
+          "description" : "78.2 (number)"
+        },
+        "hair_color" : {
+          "type" : "string",
+          "description" : "black"
+        },
+        "skin_color" : {
+          "type" : "string",
+          "description" : "fair"
+        },
+        "eye_color" : {
+          "type" : "string",
+          "description" : "brown"
+        },
+        "birth_year" : {
+          "type" : "string",
+          "description" : "31.5BBY"
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "male"
+        },
+        "homeworld" : {
+          "type" : "string",
+          "description" : "http://swapi.dev/api/planets/10/"
+        },
+        "films" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/films/2/"
+          }
+        },
+        "species" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/24/"
+          }
+        },
+        "vehicles" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/23/"
+          }
+        },
+        "starships" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/21/"
+          }
+        },
+        "created" : {
+          "type" : "string",
+          "description" : "2014-12-15T12:49:32.457000Z"
+        },
+        "edited" : {
+          "type" : "string",
+          "description" : "2014-12-20T21:17:50.349000Z"
+        },
+        "url" : {
+          "type" : "string",
+          "description" : "http://swapi.dev/api/people/22/"
+        }
+      },
+      "xml" : {
+        "name" : "People"
+      }
+    }
+  },
+  "externalDocs" : {
+    "description" : "Find out more about SWAPI",
+    "url" : "https://github.com/donPabloNow/Chuck-SWAPI"
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "schemes" : [ "https", "http" ],
+  "basePath" : "/don-Pablo/SWAPI/1.0.0"
+}
