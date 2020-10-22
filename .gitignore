@@ -1,8 +1,8 @@
-node_modules
+src/
+node_modules/
 *-lock.json
 *.local
 *.lock
 codegen
 requirements.txt
 utils.py
-src
