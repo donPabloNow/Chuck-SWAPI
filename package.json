@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/donPabloNow/Chuck-Swapi-API/issues"
   },
-  "homepage": "https://github.com/donPabloNow/Chuck-Swapi-API#readme"
+  "homepage": "https://github.com/donPabloNow/Chuck-Swapi-API#readme",
+  "dependencies": {}
 }

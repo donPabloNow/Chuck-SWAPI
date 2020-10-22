@@ -1,4 +1,5 @@
 node_modules
+lock.json
 *.local
 *.lock
 codegen
