@@ -7,8 +7,8 @@ Clone the repository, build the solution with dotnet build. Run the project with
 
 ## Web API
 
-Chuck SWAPI API Documentation https://app.swaggerhub.com/apis/donPabloNow/donPabloNow/1.0.0
-SWAPI API Documentation https://app.swaggerhub.com/apis/don-Pablo/SWAPI/1.0.0
+Chuck SWAPI API Documentation https://explore.postman.com/api/8936/chuck-swapi
+SWAPI API Documentation https://explore.postman.com/api/8937/swapi
 
 ## Prerequisites
 
