@@ -18,14 +18,18 @@
     "description" : "If at first you do not succeed, you are not Chuck Norris",
     "externalDocs" : {
       "description" : "Find out more about Chuck",
-      "url" : "https://github.com/donPabloNow/Chuck-SWAPI"
+      "url" : "https://api.chucknorris.io/"
     }
   }, {
     "name" : "swapis",
-    "description" : "Access to Petstore orders"
+    "description" : "Now with The Force Awakens data!",
+    "externalDocs" : {
+      "description" : "Find out more about SWAPI",
+      "url" : "https://swapi.dev/"
+    }
   }, {
     "name" : "serarch",
-    "description" : "Now with The Force Awakens data!",
+    "description" : "One ring to rule them all, one ring to find them, One ring to bring them all and in the darkness bind them",
     "externalDocs" : {
       "description" : "Find out more about SWAPI",
       "url" : "https://github.com/donPabloNow/Chuck-SWAPI"
