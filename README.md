@@ -5,6 +5,10 @@
 
 Clone the repository, build the solution with dotnet build. Run the project with dotnet run.
 
+## Web API
+
+API Documentation https://app.swaggerhub.com/apis/donPabloNow/donPabloNow/1.0.0
+
 ## Prerequisites
 
 .NET CORE v3.1
@@ -52,11 +56,11 @@ echo '{
 
 Create a new ChuckNorris client SDK:
 ```
-docker run --rm -v ${PWD}/codegen:/local \
-  swaggerapi/swagger-codegen-cli generate \
-    -i /local/in/chuck.json \
-    -o /local/out/chuckswapi \
-    -c /local/in/config_chuckswapi_api.json \
+docker run --rm -v ${PWD}/codegen:/local 
+  swaggerapi/swagger-codegen-cli generate 
+    -i /local/in/chuck.json 
+    -o /local/out/chuckswapi 
+    -c /local/in/config_chuckswapi_api.json 
     -l aspnetcore
 ```
 

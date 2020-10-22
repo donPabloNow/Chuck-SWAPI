@@ -1,0 +1,710 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "chucknorris.io is a free JSON API for hand curated Chuck Norris facts.\n\nChuck Norris facts are satirical factoids about martial artist and actor Chuck Norris that have become an Internet phenomenon and as a result have become widespread in popular culture. The 'facts' are normally absurd hyperbolic claims about Norris' toughness, attitude, virility, sophistication, and masculinity.\n\nChuck Norris facts have spread around the world, leading not only to translated versions, but also spawning localized versions mentioning country-specific advertisements and other Internet phenomena. Allusions are also sometimes made to his use of roundhouse kicks to perform seemingly any task, his large amount of body hair with specific regard to his beard, and his role in the action television series Walker, Texas Ranger.",
+    "version" : "2.0.0",
+    "title" : "Chuck Norris IO",
+    "termsOfService" : "https://api.chucknorris.io/",
+    "contact" : {
+      "name" : "Mathias Schilling",
+      "url" : "https://www.matchilling.com",
+      "email" : "m@matchilling.com"
+    },
+    "license" : {
+      "name" : "GNU General Public License v3.0",
+      "url" : "https://github.com/chucknorris-io/chuck-api/blob/master/LICENSE"
+    }
+  },
+  "host" : "api.chucknorris.io",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "feed-controller",
+    "description" : "Feed Controller"
+  }, {
+    "name" : "joke-controller",
+    "description" : "Joke Controller"
+  }, {
+    "name" : "slack-controller",
+    "description" : "Slack Controller"
+  } ],
+  "paths" : {
+    "/feed/daily-chuck" : {
+      "get" : {
+        "tags" : [ "feed-controller" ],
+        "summary" : "dailyChuckJson",
+        "operationId" : "dailyChuckJsonUsingGET",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/DailyChuck"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/feed/daily-chuck.json" : {
+      "get" : {
+        "tags" : [ "feed-controller" ],
+        "summary" : "dailyChuckJson",
+        "operationId" : "dailyChuckJsonUsingGET_1",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/DailyChuck"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/feed/daily-chuck.xml" : {
+      "get" : {
+        "tags" : [ "feed-controller" ],
+        "summary" : "dailyChuckRss",
+        "operationId" : "dailyChuckRssUsingGET_1",
+        "produces" : [ "text/xml", "application/rss+xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/View"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/feed/daily-chuck/stats" : {
+      "get" : {
+        "tags" : [ "feed-controller" ],
+        "summary" : "dailyChuckStats",
+        "operationId" : "dailyChuckStatsUsingGET",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/MailingListStatistic"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jokes/categories" : {
+      "get" : {
+        "tags" : [ "joke-controller" ],
+        "summary" : "getCategories",
+        "operationId" : "getCategoriesUsingGET",
+        "produces" : [ "application/json", "text/plain" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jokes/random" : {
+      "get" : {
+        "tags" : [ "joke-controller" ],
+        "summary" : "getRandomJoke",
+        "operationId" : "getRandomJokeUsingGET",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "category",
+          "in" : "query",
+          "description" : "category",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "description" : "name",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/Joke"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jokes/search" : {
+      "get" : {
+        "tags" : [ "joke-controller" ],
+        "summary" : "searchValues",
+        "operationId" : "searchValuesUsingGET",
+        "produces" : [ "application/json", "text/plain" ],
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jokes/slack" : {
+      "post" : {
+        "tags" : [ "slack-controller" ],
+        "summary" : "command",
+        "operationId" : "commandUsingPOST",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "channelId",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "channelName",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "command",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enterpriseId",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enterpriseName",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "responseUrl",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "teamDomain",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "teamId",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "text",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "token",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "triggerId",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "userId",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "userName",
+          "in" : "formData",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/SlackCommandResponse"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/jokes/{id}" : {
+      "get" : {
+        "tags" : [ "joke-controller" ],
+        "summary" : "getJokeValue",
+        "operationId" : "getJokeValueUsingGET",
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "deprecated" : false
+      }
+    }
+  },
+  "definitions" : {
+    "AtomicDouble" : {
+      "type" : "object",
+      "title" : "AtomicDouble"
+    },
+    "AtomicInteger" : {
+      "type" : "object",
+      "properties" : {
+        "and_decrement" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "and_increment" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "AtomicInteger",
+      "example" : {
+        "and_increment" : 6,
+        "and_decrement" : 0
+      }
+    },
+    "DailyChuck" : {
+      "type" : "object",
+      "properties" : {
+        "issue_number" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "issues" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DailyChuckIssue"
+          }
+        }
+      },
+      "title" : "DailyChuck",
+      "example" : {
+        "issue_number" : 0,
+        "issues" : [ {
+          "date" : "2000-01-23T04:56:07.000+00:00",
+          "joke_id" : "joke_id"
+        }, {
+          "date" : "2000-01-23T04:56:07.000+00:00",
+          "joke_id" : "joke_id"
+        } ]
+      }
+    },
+    "DailyChuckIssue" : {
+      "type" : "object",
+      "properties" : {
+        "date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "joke_id" : {
+          "type" : "string"
+        }
+      },
+      "title" : "DailyChuckIssue",
+      "example" : {
+        "date" : "2000-01-23T04:56:07.000+00:00",
+        "joke_id" : "joke_id"
+      }
+    },
+    "Joke" : {
+      "type" : "object",
+      "required" : [ "value" ],
+      "properties" : {
+        "categories" : {
+          "type" : "array",
+          "description" : "MailingList of categories.",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "created_at" : {
+          "type" : "string",
+          "example" : "2019-06-02 08:47:39.408742",
+          "description" : "Timestamp when the joke was created."
+        },
+        "icon_url" : {
+          "type" : "string",
+          "example" : "nzf46249t8cf7wgz3rf_rg",
+          "description" : "Absolute URL of the Chuck Norris icon."
+        },
+        "id" : {
+          "type" : "string",
+          "example" : "nzf46249t8cf7wgz3rf_rg",
+          "description" : "URL-safe Base64-encoded UUID for a joke."
+        },
+        "updated_at" : {
+          "type" : "string",
+          "example" : "2019-06-02 08:47:39.408742",
+          "description" : "Timestamp when the joke was updated."
+        },
+        "url" : {
+          "type" : "string",
+          "example" : "https://api.chucknorris.io/jokes/nzf46249t8cf7wgz3rf_rg",
+          "description" : "Absolute URL of the joke."
+        },
+        "value" : {
+          "type" : "string",
+          "example" : "Chuck Norris doesn't have disk latency because the hard drive knows to hurry the hell up.",
+          "description" : "The contents of an incredible funny joke."
+        }
+      },
+      "title" : "Joke",
+      "example" : {
+        "icon_url" : "nzf46249t8cf7wgz3rf_rg",
+        "updated_at" : "2019-06-02 08:47:39.408742",
+        "created_at" : "2019-06-02 08:47:39.408742",
+        "categories" : [ "categories", "categories" ],
+        "id" : "nzf46249t8cf7wgz3rf_rg",
+        "value" : "Chuck Norris doesn't have disk latency because the hard drive knows to hurry the hell up.",
+        "url" : "https://api.chucknorris.io/jokes/nzf46249t8cf7wgz3rf_rg"
+      }
+    },
+    "MailingListStatistic" : {
+      "type" : "object",
+      "properties" : {
+        "avg_sub_rate" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "avg_unsub_rate" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "campaign_count" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "campaign_last_sent" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "cleaned_count" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "cleaned_count_since_send" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "click_rate" : {
+          "$ref" : "#/definitions/AtomicDouble"
+        },
+        "last_sub_date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "last_unsub_date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "member_count" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "member_count_since_send" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "merge_field_count" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "open_rate" : {
+          "$ref" : "#/definitions/AtomicDouble"
+        },
+        "target_sub_rate" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "unsubscribe_count" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        },
+        "unsubscribe_count_since_send" : {
+          "$ref" : "#/definitions/AtomicInteger"
+        }
+      },
+      "title" : "MailingListStatistic",
+      "example" : {
+        "cleaned_count" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "unsubscribe_count_since_send" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "member_count_since_send" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "click_rate" : { },
+        "cleaned_count_since_send" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "campaign_count" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "avg_unsub_rate" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "last_sub_date" : "2000-01-23T04:56:07.000+00:00",
+        "target_sub_rate" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "unsubscribe_count" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "avg_sub_rate" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "campaign_last_sent" : "2000-01-23T04:56:07.000+00:00",
+        "member_count" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "merge_field_count" : {
+          "and_increment" : 6,
+          "and_decrement" : 0
+        },
+        "last_unsub_date" : "2000-01-23T04:56:07.000+00:00"
+      }
+    },
+    "ModelAndView" : {
+      "type" : "object",
+      "properties" : {
+        "empty" : {
+          "type" : "boolean"
+        },
+        "model" : {
+          "type" : "object",
+          "properties" : { }
+        },
+        "model_map" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "object",
+            "properties" : { }
+          }
+        },
+        "reference" : {
+          "type" : "boolean"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "100 CONTINUE", "101 SWITCHING_PROTOCOLS", "102 PROCESSING", "103 CHECKPOINT", "200 OK", "201 CREATED", "202 ACCEPTED", "203 NON_AUTHORITATIVE_INFORMATION", "204 NO_CONTENT", "205 RESET_CONTENT", "206 PARTIAL_CONTENT", "207 MULTI_STATUS", "208 ALREADY_REPORTED", "226 IM_USED", "300 MULTIPLE_CHOICES", "301 MOVED_PERMANENTLY", "302 FOUND", "302 MOVED_TEMPORARILY", "303 SEE_OTHER", "304 NOT_MODIFIED", "305 USE_PROXY", "307 TEMPORARY_REDIRECT", "308 PERMANENT_REDIRECT", "400 BAD_REQUEST", "401 UNAUTHORIZED", "402 PAYMENT_REQUIRED", "403 FORBIDDEN", "404 NOT_FOUND", "405 METHOD_NOT_ALLOWED", "406 NOT_ACCEPTABLE", "407 PROXY_AUTHENTICATION_REQUIRED", "408 REQUEST_TIMEOUT", "409 CONFLICT", "410 GONE", "411 LENGTH_REQUIRED", "412 PRECONDITION_FAILED", "413 PAYLOAD_TOO_LARGE", "413 REQUEST_ENTITY_TOO_LARGE", "414 URI_TOO_LONG", "414 REQUEST_URI_TOO_LONG", "415 UNSUPPORTED_MEDIA_TYPE", "416 REQUESTED_RANGE_NOT_SATISFIABLE", "417 EXPECTATION_FAILED", "418 I_AM_A_TEAPOT", "419 INSUFFICIENT_SPACE_ON_RESOURCE", "420 METHOD_FAILURE", "421 DESTINATION_LOCKED", "422 UNPROCESSABLE_ENTITY", "423 LOCKED", "424 FAILED_DEPENDENCY", "426 UPGRADE_REQUIRED", "428 PRECONDITION_REQUIRED", "429 TOO_MANY_REQUESTS", "431 REQUEST_HEADER_FIELDS_TOO_LARGE", "451 UNAVAILABLE_FOR_LEGAL_REASONS", "500 INTERNAL_SERVER_ERROR", "501 NOT_IMPLEMENTED", "502 BAD_GATEWAY", "503 SERVICE_UNAVAILABLE", "504 GATEWAY_TIMEOUT", "505 HTTP_VERSION_NOT_SUPPORTED", "506 VARIANT_ALSO_NEGOTIATES", "507 INSUFFICIENT_STORAGE", "508 LOOP_DETECTED", "509 BANDWIDTH_LIMIT_EXCEEDED", "510 NOT_EXTENDED", "511 NETWORK_AUTHENTICATION_REQUIRED" ]
+        },
+        "view" : {
+          "$ref" : "#/definitions/View"
+        },
+        "view_name" : {
+          "type" : "string"
+        }
+      },
+      "title" : "ModelAndView"
+    },
+    "SlackCommandResponse" : {
+      "type" : "object",
+      "properties" : {
+        "attachments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SlackCommandResponseAttachment"
+          }
+        },
+        "icon_url" : {
+          "type" : "string"
+        },
+        "response_type" : {
+          "type" : "string"
+        },
+        "text" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SlackCommandResponse",
+      "example" : {
+        "icon_url" : "icon_url",
+        "attachments" : [ {
+          "mrkdown_in" : [ "mrkdown_in", "mrkdown_in" ],
+          "title_link" : "title_link",
+          "text" : "text",
+          "title" : "title",
+          "fallback" : "fallback"
+        }, {
+          "mrkdown_in" : [ "mrkdown_in", "mrkdown_in" ],
+          "title_link" : "title_link",
+          "text" : "text",
+          "title" : "title",
+          "fallback" : "fallback"
+        } ],
+        "response_type" : "response_type",
+        "text" : "text"
+      }
+    },
+    "SlackCommandResponseAttachment" : {
+      "type" : "object",
+      "properties" : {
+        "fallback" : {
+          "type" : "string"
+        },
+        "mrkdown_in" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "text" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "title_link" : {
+          "type" : "string"
+        }
+      },
+      "title" : "SlackCommandResponseAttachment",
+      "example" : {
+        "mrkdown_in" : [ "mrkdown_in", "mrkdown_in" ],
+        "title_link" : "title_link",
+        "text" : "text",
+        "title" : "title",
+        "fallback" : "fallback"
+      }
+    },
+    "View" : {
+      "type" : "object",
+      "properties" : {
+        "content_type" : {
+          "type" : "string"
+        }
+      },
+      "title" : "View"
+    }
+  }
+}
