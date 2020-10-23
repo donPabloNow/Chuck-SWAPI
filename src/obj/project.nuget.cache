@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "j2YP0BlA9rscWDS19I8OKF+KoHmwPATvjeorMTFlV7bm49ZByoJRvSiMDrHJZo16uJJKbomNALwTqvi1qcF2sw==",
+  "success": false,
+  "projectFilePath": "E:\\Assesments\\SovTech\\LIVE\\src\\ChuckSWAPI.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'E:\\Assesments\\SovTech\\LIVE\\src\\chuckclient\\chuckclient.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "E:\\Assesments\\SovTech\\LIVE\\src\\chuckclient\\chuckclient.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'E:\\Assesments\\SovTech\\LIVE\\src\\chuckswapi\\chuckswapi.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "E:\\Assesments\\SovTech\\LIVE\\src\\chuckswapi\\chuckswapi.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'E:\\Assesments\\SovTech\\LIVE\\src\\swapiclient\\swapiclient.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "E:\\Assesments\\SovTech\\LIVE\\src\\swapiclient\\swapiclient.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

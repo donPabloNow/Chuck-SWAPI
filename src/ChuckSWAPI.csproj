@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="chuckclient/chuckclient.csproj" />
+	</ItemGroup>
+	
+		<ItemGroup>
+		<ProjectReference Include="chuckswapi/chuckswapi.csproj" />
+	</ItemGroup>
+	
+		<ItemGroup>
+		<ProjectReference Include="swapiclient/swapiclient.csproj" />
+	</ItemGroup>
+
+
+</Project>

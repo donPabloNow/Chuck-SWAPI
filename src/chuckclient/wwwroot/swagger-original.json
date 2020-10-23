@@ -1,0 +1,79 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "chucknorris.io is a free JSON API for hand curated Chuck Norris facts.\n\nChuck Norris facts are satirical factoids about martial artist and actor Chuck Norris that have become an Internet phenomenon and as a result have become widespread in popular culture. The 'facts' are normally absurd hyperbolic claims about Norris' toughness, attitude, virility, sophistication, and masculinity.\n\nChuck Norris facts have spread around the world, leading not only to translated versions, but also spawning localized versions mentioning country-specific advertisements and other Internet phenomena. Allusions are also sometimes made to his use of roundhouse kicks to perform seemingly any task, his large amount of body hair with specific regard to his beard, and his role in the action television series Walker, Texas Ranger.",
+    "version" : "2.0.0",
+    "title" : "Chuck Norris IO",
+    "termsOfService" : "https://api.chucknorris.io/",
+    "contact" : {
+      "name" : "Mathias Schilling",
+      "url" : "https://www.matchilling.com",
+      "email" : "m@matchilling.com"
+    },
+    "license" : {
+      "name" : "GNU General Public License v3.0",
+      "url" : "https://github.com/chucknorris-io/chuck-api/blob/master/LICENSE"
+    }
+  },
+  "host" : "api.chucknorris.io",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "feed-controller",
+    "description" : "Feed Controller"
+  }, {
+    "name" : "joke-controller",
+    "description" : "Joke Controller"
+  }, {
+    "name" : "slack-controller",
+    "description" : "Slack Controller"
+  } ],
+  "paths" : {
+    "/feed/daily-chuck" : { },
+    "/feed/daily-chuck.json" : { },
+    "/feed/daily-chuck.xml" : { },
+    "/feed/daily-chuck/stats" : { },
+    "/jokes/categories" : { },
+    "/jokes/random" : { },
+    "/jokes/search" : { },
+    "/jokes/slack" : { },
+    "/jokes/{id}" : { }
+  },
+  "definitions" : {
+    "AtomicDouble" : {
+      "type" : "object",
+      "title" : "AtomicDouble"
+    },
+    "AtomicInteger" : {
+      "type" : "object",
+      "title" : "AtomicInteger"
+    },
+    "DailyChuck" : {
+      "type" : "object",
+      "title" : "DailyChuck"
+    },
+    "DailyChuckIssue" : {
+      "type" : "object",
+      "title" : "DailyChuckIssue"
+    },
+    "Joke" : {
+      "type" : "object",
+      "title" : "Joke"
+    },
+    "MailingListStatistic" : {
+      "type" : "object",
+      "title" : "MailingListStatistic"
+    },
+    "SlackCommandResponse" : {
+      "type" : "object",
+      "title" : "SlackCommandResponse"
+    },
+    "SlackCommandResponseAttachment" : {
+      "type" : "object",
+      "title" : "SlackCommandResponseAttachment"
+    },
+    "View" : {
+      "type" : "object",
+      "title" : "View"
+    }
+  }
+}

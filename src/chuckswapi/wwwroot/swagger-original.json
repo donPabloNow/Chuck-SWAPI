@@ -1,0 +1,342 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : ".NET CORE C# Chuck SWAPI Project API.",
+    "version" : "1.0.0",
+    "title" : "Chuck SWAPI API",
+    "termsOfService" : "https://github.com/donPabloNow/Chuck-SWAPI",
+    "contact" : {
+      "email" : "don@obeyi.com"
+    },
+    "license" : {
+      "name" : "MIT",
+      "url" : "https://choosealicense.com/licenses/mit/"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/donPabloNow/donPabloNow/1.0.0",
+  "tags" : [ {
+    "name" : "chuck",
+    "description" : "If at first you do not succeed, you are not Chuck Norris",
+    "externalDocs" : {
+      "description" : "Find out more about Chuck",
+      "url" : "https://api.chucknorris.io/"
+    }
+  }, {
+    "name" : "swapis",
+    "description" : "Now with The Force Awakens data!",
+    "externalDocs" : {
+      "description" : "Find out more about SWAPI",
+      "url" : "https://swapi.dev/"
+    }
+  }, {
+    "name" : "serarch",
+    "description" : "One ring to rule them all, one ring to find them, One ring to bring them all and in the darkness bind them",
+    "externalDocs" : {
+      "description" : "Find out more about SWAPI",
+      "url" : "https://github.com/donPabloNow/Chuck-SWAPI"
+    }
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/chuck/categories" : {
+      "post" : {
+        "tags" : [ "chuck" ],
+        "summary" : "Returns a list of Joke categories",
+        "description" : "animal,career,celebrity,dev",
+        "operationId" : "chuckCategories",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/swapi/people" : {
+      "post" : {
+        "tags" : [ "swapi" ],
+        "summary" : "Returns a list os Star Wars People",
+        "description" : "-[name:Luke Skywalker,...]-",
+        "operationId" : "swapiPeople",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+    "/search" : {
+      "post" : {
+        "tags" : [ "search" ],
+        "summary" : "Takes a query string and returns a collection of Chuck Norris Jokes and Star Wars People based filtered by the query string provided.",
+        "description" : "people[], jokes[]",
+        "operationId" : "search",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "The query string that will be used to search for Jokes and People",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          },
+          "400" : {
+            "description" : "Bad request. Query string is required."
+          },
+          "401" : {
+            "description" : "Authorization information is missing or invalid."
+          },
+          "404" : {
+            "description" : "No results where found for this this query."
+          },
+          "500" : {
+            "description" : "An unexpected error has occured, our support team has been notified and will resolve the issue as soon as possible."
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Result" : {
+      "type" : "object",
+      "properties" : {
+        "people" : {
+          "type" : "array",
+          "description" : "Data Source is the Star Wars API",
+          "items" : {
+            "$ref" : "#/definitions/People"
+          }
+        },
+        "jokes" : {
+          "type" : "array",
+          "description" : "Source is the Chuck Norris API",
+          "items" : {
+            "$ref" : "#/definitions/Jokes"
+          }
+        }
+      },
+      "xml" : {
+        "name" : "Result"
+      },
+      "example" : {
+        "people" : [ {
+          "films" : [ "films", "films" ],
+          "homeworld" : "homeworld",
+          "gender" : "gender",
+          "skin_color" : "skin_color",
+          "edited" : "edited",
+          "created" : "created",
+          "mass" : 6.02745618307040320615897144307382404804229736328125,
+          "vehicles" : [ "vehicles", "vehicles" ],
+          "url" : "url",
+          "hair_color" : "hair_color",
+          "birth_year" : "birth_year",
+          "eye_color" : "eye_color",
+          "species" : [ "species", "species" ],
+          "starships" : [ "starships", "starships" ],
+          "name" : "name",
+          "height" : 0.80082819046101150206595775671303272247314453125
+        }, {
+          "films" : [ "films", "films" ],
+          "homeworld" : "homeworld",
+          "gender" : "gender",
+          "skin_color" : "skin_color",
+          "edited" : "edited",
+          "created" : "created",
+          "mass" : 6.02745618307040320615897144307382404804229736328125,
+          "vehicles" : [ "vehicles", "vehicles" ],
+          "url" : "url",
+          "hair_color" : "hair_color",
+          "birth_year" : "birth_year",
+          "eye_color" : "eye_color",
+          "species" : [ "species", "species" ],
+          "starships" : [ "starships", "starships" ],
+          "name" : "name",
+          "height" : 0.80082819046101150206595775671303272247314453125
+        } ],
+        "jokes" : [ {
+          "icon_url" : "icon_url",
+          "updated_at" : "updated_at",
+          "created_at" : "created_at",
+          "categories" : [ "categories", "categories" ],
+          "id" : 1.46581298050294517310021547018550336360931396484375,
+          "value" : "value",
+          "url" : "url"
+        }, {
+          "icon_url" : "icon_url",
+          "updated_at" : "updated_at",
+          "created_at" : "created_at",
+          "categories" : [ "categories", "categories" ],
+          "id" : 1.46581298050294517310021547018550336360931396484375,
+          "value" : "value",
+          "url" : "url"
+        } ]
+      }
+    },
+    "People" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Boba Fett"
+        },
+        "height" : {
+          "type" : "number",
+          "description" : "183 (number)"
+        },
+        "mass" : {
+          "type" : "number",
+          "description" : "78.2 (number)"
+        },
+        "hair_color" : {
+          "type" : "string",
+          "description" : "black"
+        },
+        "skin_color" : {
+          "type" : "string",
+          "description" : "fair"
+        },
+        "eye_color" : {
+          "type" : "string",
+          "description" : "brown"
+        },
+        "birth_year" : {
+          "type" : "string",
+          "description" : "31.5BBY"
+        },
+        "gender" : {
+          "type" : "string",
+          "description" : "male"
+        },
+        "homeworld" : {
+          "type" : "string",
+          "description" : "http://swapi.dev/api/planets/10/"
+        },
+        "films" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/films/2/"
+          }
+        },
+        "species" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/24/"
+          }
+        },
+        "vehicles" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/23/"
+          }
+        },
+        "starships" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "http://swapi.dev/api/starships/21/"
+          }
+        },
+        "created" : {
+          "type" : "string",
+          "description" : "2014-12-15T12:49:32.457000Z"
+        },
+        "edited" : {
+          "type" : "string",
+          "description" : "2014-12-20T21:17:50.349000Z"
+        },
+        "url" : {
+          "type" : "string",
+          "description" : "http://swapi.dev/api/people/22/"
+        }
+      },
+      "xml" : {
+        "name" : "People"
+      },
+      "example" : {
+        "films" : [ "films", "films" ],
+        "homeworld" : "homeworld",
+        "gender" : "gender",
+        "skin_color" : "skin_color",
+        "edited" : "edited",
+        "created" : "created",
+        "mass" : 6.02745618307040320615897144307382404804229736328125,
+        "vehicles" : [ "vehicles", "vehicles" ],
+        "url" : "url",
+        "hair_color" : "hair_color",
+        "birth_year" : "birth_year",
+        "eye_color" : "eye_color",
+        "species" : [ "species", "species" ],
+        "starships" : [ "starships", "starships" ],
+        "name" : "name",
+        "height" : 0.80082819046101150206595775671303272247314453125
+      }
+    },
+    "Jokes" : {
+      "type" : "object",
+      "properties" : {
+        "categories" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "description" : "history"
+          }
+        },
+        "created_at" : {
+          "type" : "string",
+          "description" : "2020-01-05 13:42:19.576875"
+        },
+        "icon_url" : {
+          "type" : "string",
+          "description" : "https://assets.chucknorris.host/img/avatar/chuck-norris.png"
+        },
+        "id" : {
+          "type" : "number",
+          "description" : "vxmg5zgusq6ra35ns4e5sw"
+        },
+        "updated_at" : {
+          "type" : "string",
+          "description" : "2020-01-05 13:42:19.576875"
+        },
+        "url" : {
+          "type" : "string",
+          "description" : "https://api.chucknorris.io/jokes/vxmg5zgusq6ra35ns4e5sw"
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "After returning from World War 2 unscrathed, Bob Dole was congratulated by Chuck Norris with a handshake. The rest is history."
+        }
+      },
+      "xml" : {
+        "name" : "Jokes"
+      },
+      "example" : {
+        "icon_url" : "icon_url",
+        "updated_at" : "updated_at",
+        "created_at" : "created_at",
+        "categories" : [ "categories", "categories" ],
+        "id" : 1.46581298050294517310021547018550336360931396484375,
+        "value" : "value",
+        "url" : "url"
+      }
+    }
+  },
+  "externalDocs" : {
+    "description" : "Find out more about Chuck Swapi",
+    "url" : "https://github.com/donPabloNow/Chuck-SWAPI"
+  }
+}

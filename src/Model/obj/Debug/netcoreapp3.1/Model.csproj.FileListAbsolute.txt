@@ -1,0 +1,12 @@
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\bin\Debug\netcoreapp3.1\Model.dll
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\bin\Debug\netcoreapp3.1\Model.pdb
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.dll
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.pdb
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\bin\Debug\netcoreapp3.1\Persistence.dll
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\bin\Debug\netcoreapp3.1\Persistence.pdb
+D:\Work\Proyectos\TimeSheetWeb\Back\API\Model\obj\Debug\netcoreapp3.1\Model.csproj.CopyComplete
