@@ -15,8 +15,8 @@
 
 #Constants
 $chuckJson = './codegen/in/chuck.json'
-$swapiJson = './codegen/in/swapi.json'
-$chuckSwapiJson = './codegen/in/chuckswapi.json'
+$swapiJson = './codegen/in/SWAPI'
+$chuckSwapiJson = './codegen/in/Chuck SWAPI'
 
 $codegenPath = './codegen'
 $codegenInPath = './codegen/in'
@@ -37,8 +37,11 @@ $configSwapiLocalPath = '/local/in/config_swapi.json'
 $configChuckSwapiLocalPath = '/local/in/config_chuckswapi.json'
 
 $chuckLocalJson = '/local/in/chuck.json'
-$swapiLocalJson = '/local/in/swapi.json'
-$chuckSwapiLocalJson = '/local/in/chuckswapi.json'
+$swapiLocalJson = '/local/in/SWAPI'
+$chuckSwapiLocalJson = '/local/in/Chuck SWAPI'
+
+$swapiApi = './api/SWAPI'
+$chuckSwapiApi = './api/Chuck SWAPI'
 
 function Get-Main {
 	
@@ -129,17 +132,8 @@ function Get-Scheme {
 	ConvertTo-Json |
 	Set-Content $saveAs
 
-	$url = "https://raw.githubusercontent.com/donPabloNow/Chuck-SWAPI/main/api/Chuck%20SWAPI"
-	$saveAs = $swapiJson
-	Invoke-RestMethod -Uri $url -Method Get |
-	ConvertTo-Json |
-	Set-Content $saveAs
-
-	$url = "https://raw.githubusercontent.com/donPabloNow/Chuck-SWAPI/main/api/SWAPI"
-	$saveAs = $chuckSwapiJson
-	Invoke-RestMethod -Uri $url -Method Get |
-	ConvertTo-Json |
-	Set-Content $saveAs
+	Copy-Item $swapiApi -Destination $swapiJson
+	Copy-Item $chuckSwapiApi -Destination $chuckSwapiJson
 }
 
 function Get-Config {
